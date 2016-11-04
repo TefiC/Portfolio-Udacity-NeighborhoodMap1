@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Udacity Project: Neighborhood Map</title>
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!--Added normalize CSS for browser compatibility-->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+
+
+		<!--For fade animations-->
+		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+		<!--GOOGLE FONTS-->
+		<!--"Filter search"--><link href="https://fonts.googleapis.com/css?family=Dancing+Script:700" rel="stylesheet">
+		<!--"Venue title"--><link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	</head>
+
+	<body>
+		<!--MAIN DIV-->
+		<div class="app-main-div">
+
+			<!--WELCOME DIV-->
+			<div data-bind="visible: welcomeDivVisible" class="welcome-main-div w3-animate-zoom">
+				<div data-bind="click: hideWelcomeDiv" class="welcome-content-div">
+					<span class="fontawesome-arrow-right welcome-div-close-logo"></span>
+					<h1 class="welcome-div-title">Welcome!</h1>
+					<h3 class="welcome-div-text">Find your favorite DONUTS at Orlando, Florida</h3>
+					<img class="welcome-div-img" src="img/welcome-logo-min.png" alt="DonutFinder logo">
+				</div>
+			</div>
+
+
+			<!--APP CONTENT DIV-->
+			<div class="app-content-main-div">
+
+				<!--MAP-->
+				<div id="map"></div>
+
+				<!--Donut Image next to sidebar-->
+				<img data-bind="visible: showDonut" class="donut-img" src="img/donut-min.png" alt="Chocolate donut">
+
+				<!--FILTER SEARCH MAIN DIV-->
+				<div data-bind="css: {open: searchBarVisible}" class="filter-search-main-div">
+
+					<!--Filter search-->
+					<div class="filter-search-container">
+
+						<!--Title-->
+						<h1 class="filter-title">Filter Search</h1>
+
+						<!--Text Input field-->
+						<div class="filter-input-icon-div">
+							<input data-bind="textInput: input, event: {keyup: filterVenuesList}" class="text-input-field" type="text" placeholder="Find Donuts!">
+							<span data-bind="click: resetSearch" class="fontawesome-undo filter-search-reset-logo"></span>
+						</div>
+
+						<!--Template-->
+						<div data-bind="foreach: venuesData">
+							<div data-bind= "style: { backgroundColor: clicked() == true ? 'white' : 'rgb(191, 188, 255)'}, click: $parent.handleClickOnItem, visible: visible" class="location-item">
+								<h3 data-bind="text: name" class="location-title">Venue Title</h3>
+								<p data-bind="text: address" class="location-address">Address 1</p>
+							</div>
+						</div>
+
+					</div><!--Filter search-->
+
+				</div><!--FILTER SEARCH MAIN DIV-->
+
+			</div><!--APP CONTENT DIV-->
+
+			<!--FOOTER-->
+			<footer class="footer">
+
+				<div class="footer-buttons-main-div">
+					<div data-bind="click: toggleSearchBar" class="footer-button toggle-sidebar-button">
+						<p class="footer-button-text" data-bind="text: footerButton">Search</p>
+					</div>
+
+					<div data-bind="click: showMarkers" class="show-all-markers-button footer-button">
+						<p class="footer-button-text">Markers</p>
+					</div>
+				</div>
+
+				<div class="attribution-div">
+					<p class="powered-by">Powered By</p>
+					<img class="foursquare-logo" src="img/foursquare-logo-min.png" alt="Foursquare logo">
+				</div>
+
+			</footer>
+
+		</div><!--MAIN DIV-->
+
+
+		<!--SCRIPTS-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/knockout-3.2.0.js"></script>
+		<script src="js/app.js"></script>
+
+		<script async defer
+			src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDt6Uq8oxNN1qyjzTCRxWe6pHbLIw1YN5s&callback=initMap"
+			onerror = "googleMapsFailed()">
+		</script>
+	</body>
+</html>

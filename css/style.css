@@ -1,0 +1,880 @@
+/* DEFAULT DESIGN FOR MOBILE ============================================================================================================================*/
+
+/*Icon fonts -------------------------------------------------------*/
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+	font-family: 'FontAwesome', sans-serif;
+}
+
+.icon-font {
+	margin-right: 20px;
+	font-size: 19px;
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	-moz-user-select: none;     /* Firefox all */
+	-ms-user-select: none;      /* IE 10+ */
+}
+
+.small-icon-font {
+	display: block;
+	font-size: 20px;
+	text-align: center;
+}
+
+.link-icon-font {
+	font-size: 19px;
+	margin-right: 5px;
+	color: #bb067a;
+}
+
+/*MAIN STYLES============================================================================================================================*/
+
+html, body {
+	height: 100%;
+	width: 100%;
+	background-color: rgb(22,147,167);
+	margin: 0;
+}
+
+.app-main-div {
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+}
+
+.app-content-main-div {
+	background-color: transparent;
+	width: 100%;
+	height: 94%;
+	padding-top: 5px;
+}
+
+/*CONTENT ============================================================================================================================*/
+
+/*Welcome div -------------------------------------------------------*/
+.welcome-main-div {
+	height: 90%;
+	width: 96%;
+	/*background-color: black;*/
+	position: absolute;
+	z-index: 25;
+	margin-top: 2%;
+	margin-left: 2%;
+
+	background: -webkit-linear-gradient(#7600ff, rgba(255, 154, 0, 0.51)); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#7600ff, rgba(255, 154, 0, 0.51)); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#7600ff, rgba(255, 154, 0, 0.51)); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#7600ff, rgba(255, 154, 0, 0.51)); /* Standard syntax */
+}
+
+.welcome-content-div {
+	max-width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.welcome-div-close-logo {
+	font-size: 6em;
+	color: white;
+	margin-top: 5px;
+	margin-left: 43%;
+	cursor: pointer;
+}
+
+.welcome-div-title {
+	font-size: 80px;
+	font-family: 'Dancing Script', cursive;
+	color: white;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.welcome-div-text {
+	color: white;
+	text-align: center;
+}
+
+.welcome-div-img {
+	width: 220px;
+	max-height: 155px;
+	margin-left: 15%;
+}
+
+/*Filter search panel -------------------------------------------------------*/
+
+.filter-search-main-div {
+	width: 90%;
+	height: 95%;
+	display: flex;
+	background-color: transparent;
+	margin-right: auto;
+	margin-left: auto;
+	z-index: 10;
+	position: relative;
+
+	-webkit-transform: translate(-110%, 0);
+	-ms-transform: translate(-110%, 0);
+	-o-transform: translate(-110%, 0);
+	-moz-transform: translate(-110%, 0);
+	transform: translate(-110%, 0);
+
+	transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.46, 1.35);
+}
+
+/*FOR JQUERY ANIMATION (based on code provided in Udacity course)*/
+.filter-search-main-div.open {
+	-webkit-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	-o-transform: translate(0, 0);
+	-moz-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+
+.filter-search-container {
+	width: 85%;
+	height: 100%;
+	background-color: #0060a0;
+	border-radius: 5%;
+	overflow-y: scroll;
+}
+
+.filter-input-icon-div {
+	display: flex;
+}
+
+.filter-logo {
+	margin-right: 5px;
+	color: white;
+}
+
+/*SCROLL BAR. COPYRIGHT (1) (see end of file) */
+.filter-search-container::-webkit-scrollbar {
+	width: 10px;
+	/*Background where it scrolls*/
+	background-color: white;
+	border-radius: 10px;
+}
+
+.filter-search-container::-webkit-scrollbar-thumb {
+	/*Actual bar color*/
+	background-color:#43312d;
+	border-radius:10px;
+}
+
+.filter-search-container::-webkit-scrollbar-thumb:hover {
+	/*If the user hovers on it*/
+	background-color:#f36c2a;
+	border:1px solid #333333;
+}
+
+.filter-search-container::-webkit-scrollbar-thumb:active {
+	/*If the user clicks and scrolls the bar*/
+	background-color: #0060a0;
+	border:1px solid #333333;
+}
+
+.filter-search-container::-webkit-scrollbar-track {
+	/*Edges*/
+	border:1px gray solid;
+	border-radius:10px;
+	-webkit-box-shadow:0 0 6px gray inset;
+	-moz-box-shadow:0 0 6px gray inset;
+	box-shadow:0 0 6px gray inset;
+}
+
+
+.filter-title {
+	color: white;
+	font-family: 'Dancing Script', cursive;
+	font-size: 35px;
+	text-align: center;
+	padding: 0;
+	margin: 20px;
+}
+
+.text-input-field {
+	width: 80%;
+	height: 27px;
+	font-size: 9px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+/*Items ------------------*/
+.location-item {
+	height: 95px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	background-color: rgb(191, 188, 255);
+
+	margin-top: 10px;
+	/*Copyright (2)*/
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	-moz-user-select: none;     /* Firefox all */
+	-ms-user-select: none;      /* IE 10+ */
+}
+
+.location-item:hover {
+	background-color: rgb(161, 234, 249); /*Fallback background color*/
+	background-color: rgba(161, 234, 249, 0.97);
+	cursor: pointer;
+}
+
+.donut-img {
+	position: absolute;
+	float: right;
+	height: 90px;
+	margin-top: 460px;
+	margin-left: 52%;
+	z-index: 11;
+}
+
+.location-title {
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+	margin: 10px;
+	padding-top: 10px;
+}
+
+.location-address {
+	font-size: 11px;
+	margin: 0;
+	text-align: center;
+}
+
+
+/*Icon ------------------*/
+.reset-icon-div {
+	width: 15%;
+	background-color: transparent;
+	height: 50px;
+}
+
+.filter-search-reset-logo {
+	font-size: 22px;
+	color: white;
+	margin-right: 11px;
+}
+
+/*MAP ============================================================================================================================*/
+
+#map {
+	width: 100%;
+	height: 94%;
+	z-index: 8;
+	position: absolute;
+}
+
+
+/*Info window -------------------------------------------------------*/
+.gm-style .gm-style-iw {
+	background: linear-gradient(#26c6cc,  #f7d77b);; /*InfowWindow Background Color*/
+	border-radius: 5%;
+}
+
+/*Main div*/
+.marker-info-window-div {
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 15px;
+	overflow: hidden;
+	max-width: 280px;
+}
+
+/*Title*/
+.infoWindow-title-store-div {
+	display: flex;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.infoWindow-title {
+	font-size: 26px;
+	font-family: 'Lobster', cursive;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+/*Store image*/
+.infoWindow-store {
+	height: 50px;
+	width: 60px;
+	margin-top: 20px;
+	margin-left: 7px;
+}
+
+/*Content div (information not contained in small divs)*/
+.infoWindow-content-div {
+	display: flex;
+}
+
+.infoWindow-content {
+   margin: 9px;
+}
+
+/*Small divs info*/
+.small-infoWindow-content-div {
+	display: flex;
+	width: 100%;
+}
+
+.small-infoWindow-content {
+	height: 68px;
+	width: 104px;
+	margin-left: 10px;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/*Status*/
+.venue-status {
+	color: red;
+	color: rgba(202, 3, 1, 0.98);
+	text-align: center;
+}
+
+/*Bottom Link*/
+.infoWindow-link {
+	font-size: 16px;
+	color: #BB067A;
+	text-decoration: none;
+	display: flex;
+}
+
+.infoWindow-link:hover {
+	cursor: pointer;
+}
+
+/*Do not display static maps on mobile*/
+.infoWindow-static-map {
+	height: 0;
+}
+
+/*FOOTER ============================================================================================================================*/
+
+.footer{
+	background-color: rgb(22,147,167);
+	width: 100%;
+	height: 6%;
+}
+
+.footer-button {
+	float: left;
+	height: 30px;
+	width: 20%;
+	font-size: 10px;
+	background-color: rgba(248, 252, 193, 0.8);
+	color: rgb(0, 96, 160);
+	text-align: center;
+	font-weight: bold;
+	margin-left: 15px;
+}
+
+.footer-button-text {
+	margin-top: 6px;
+	font-size: 15px;
+}
+
+.show-all-markers-button {
+	font-size: 10px;
+}
+
+/*Text ----------------*/
+.attribution-div {
+	display: flex;
+	float: right;
+	padding-top: 4px;
+}
+
+.powered-by {
+	margin: 0;
+	font-size: 9px;
+	color: white;
+	padding-top: 5px;
+	margin-right: 2px;
+	font-weight: bold;
+}
+
+.foursquare-logo {
+	height: 25px;
+}
+
+
+/*RESPONSIVE DESIGN ============================================================================================================================ */
+
+/*============================================================================================================================ */
+
+
+/*MOBILE LANDSCAPE ORIENTATION===========================================================================================*/
+
+@media screen and (max-width: 1200px) and (max-height: 500px) and (orientation: landscape) {
+
+	/*Welcome*/
+	.welcome-div-close-logo {
+		font-size: 3em;
+	}
+
+	.welcome-div-title {
+		font-size: 50px;
+	}
+
+	.welcome-div-text {
+		font-size: 16px;
+	}
+
+	.welcome-div-img {
+		margin-left: 35%;
+		width: 150px;
+	}
+}
+
+	/*VERY SMALL MOBILE DEVICES PORTRAIT ORIENTATION==================================*/
+@media screen and (max-width: 350px) and (max-height: 600px) and (orientation: portrait) {
+	.donut-img {
+		margin-top: 400px;
+	}
+}
+
+	/*VERY SMALL MOBILE DEVICES LANDSCAPE ORIENTATION==================================*/
+@media screen and (max-width: 700px) and (max-height: 400px) and (orientation: landscape) {
+
+	.welcome-div-img {
+		width: 140px;
+	}
+
+	.donut-img {
+		margin-top: 222px;
+		margin-left: 67%;
+	}
+
+	.footer-button {
+		height: 17px;
+	}
+
+	.footer-button-text {
+		margin-top: 1px;
+		font-size: 10px;
+	}
+}
+
+
+
+/*MINOR MEDIA QUERIES FOR WELCOME DIV===========================================================================================*/
+
+@media screen and (min-width: 377px) and (orientation: portrait) {
+	.welcome-content-div {
+		width: 91%;
+	}
+}
+
+@media screen and (min-width: 556px) and (orientation: portrait) {
+	.welcome-content-div {
+		width: 79%;
+	}
+}
+
+@media screen and (min-width: 584px) and (orientation: portrait){
+
+	/*Welcome*/
+	.welcome-div-title {
+		font-size: 93px;
+	}
+
+	.welcome-div-img {
+		max-width: 280px;
+		max-height: 566px;
+		margin-left: 30%;
+	}
+}
+
+@media screen and (min-width: 584px) and (orientation: landscape){
+
+	/*Welcome*/
+	.welcome-div-title {
+		font-size: 70px;
+	}
+
+	.welcome-div-img {
+		max-width: 280px;
+		max-height: 566px;
+		margin-left: 30%;
+	}
+}
+
+/*ALL DEVICES LARGER THAN MOBILE===========================================================================================*/
+
+@media screen and (min-width: 470px) and (orientation: portrait){
+
+		/*Welcome*/
+
+	.welcome-div-title {
+		font-size:  88px;
+	}
+
+	.welcome-div-text {
+		font-size: 17px;
+	}
+
+	.welcome-div-img {
+		width: 250px;
+		margin-left: 15%;
+		max-height: 230px;
+	}
+
+	.welcome-content-div {
+		max-width: 100%;
+	}
+}
+
+/*FOR DEVICES WITH SPECIAL CHARACTERISTICS===========================================================================================*/
+
+/*Similar to Ipad and Nexus 10*/
+@media screen and (min-width: 700px) and (min-height: 800px) {
+	/*Welcome*/
+	.welcome-div-title {
+		font-size: 140px;
+	}
+
+	.welcome-div-text {
+		font-size: 27px;
+	}
+
+	.welcome-div-img {
+		max-height: none;
+		max-width: none;
+		width: 360px;
+	}
+
+	/*Footer*/
+	.footer-button {
+		height: 56px;
+		margin-top: 10px;
+	}
+
+	.footer-button-text {
+		font-size: 22px;
+	}
+}
+
+
+/*Similar to Iphone 4*/
+@media screen and (max-width: 320px) and (max-height: 540px) and (orientation: portrait) {
+
+	/*Welcome div*/
+	.welcome-div-close-logo {
+		font-size: 4em;
+	}
+
+	.welcome-div-title {
+		font-size: 65px;
+		margin: 0;
+	}
+
+	.welcome-div-img {
+		width: 200px;
+	}
+}
+
+/*Similar to Kindle Fire*/
+@media screen and (min-width: 1500px) and (min-height: 2400px) and (orientation: portrait){
+
+	/*Welcome*/
+	.footer-button {
+		width: 13%;
+	}
+
+	.footer-button-text {
+		font-size: 33px;
+	}
+
+	.welcome-content-div {
+		max-width: 80%;
+		max-height: none;
+		height: 50%;
+		margin-top: 19%;
+	}
+
+	.welcome-div-close-logo {
+		font-size: 16em;
+	}
+
+	.welcome-div-text {
+		font-size: 50px;
+	}
+
+	.welcome-div-img {
+		max-height: 100%;
+		max-width: 100%;
+	}
+
+	/*Search*/
+	.filter-search-main-div {
+		width: 46%;
+		height: 40%;
+		margin-top: 80%;
+	}
+
+	.filter-search-reset-logo {
+		font-size: 52px;
+		margin-left: 20px;
+	}
+
+	.filter-title {
+		font-size: 60px;
+	}
+
+	.location-title {
+		font-size: 26px;
+	}
+
+	.text-input-field {
+		height: 55px;
+		font-size: 29px;
+		margin-right: 0;
+	}
+
+	.filter-logo {
+		font-size: 38px;
+		margin-right: 30px;
+	}
+
+	/*Map*/
+	.marker-info-window-div {
+		max-width: 600px;
+	}
+
+	.infoWindow-title {
+		font-size: 50px;
+	}
+
+	.infoWindow-content,
+	.infoWindow-link {
+		font-size: 28px;
+	}
+
+	.infoWindow-store {
+		height: 100px;
+		width: 100px;
+	}
+
+	.icon-font {
+		font-size: 40px;
+	}
+
+	/*Search Bar*/
+	.filter-search-main-div {
+		transform: translate(-200%, 0);
+	}
+
+	.donut-img {
+		height: 190px;
+		margin-top: 132%;
+	}
+
+	/*Footer*/
+	.footer-button {
+		height: 93px;
+		margin-top: 2%;
+	}
+}
+
+@media screen and (min-width: 2400px) and (min-height: 1500px) and (orientation: landscape) {
+
+	/*Welcome*/
+	.welcome-div-close-logo {
+		font-size: 11em;
+	}
+
+	.welcome-div-title {
+		font-size: 350px;
+	}
+
+	.welcome-div-text {
+		font-size: 60px;
+	}
+
+	.welcome-div-img {
+		width: 730px;
+		max-width: 800px;
+		max-height: 500px;
+		margin-left: 27%;
+	}
+
+	/*Search Bar*/
+	.filter-search-main-div {
+		transform: translate(-200%, 0);
+	}
+
+	.filter-search-reset-logo {
+		font-size: 45px;
+		margin-left: 20px;
+	}
+
+	.donut-img {
+		height: 200px;
+		margin-top: 40%;
+	}
+
+	/*Footer*/
+	.footer-button {
+		height: 65px;
+		margin-top: 15px;
+	}
+
+}
+
+/*TABLET ===========================================================================================*/
+
+@media screen and (min-width: 750px) and (orientation: landscape) {
+
+	/*Content*/
+
+		/*Welcome*/
+	.welcome-content-div {
+		width: 620px;
+	}
+		/*Search*/
+	.filter-search-main-div {
+		width: 26%;
+		height: 80%;
+		margin-left: 5%;
+		margin-top: 60px;
+		transform: translate(0, 0);
+		-webkit-transform: translate(0, 0);
+		-moz-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		-o-transform: translate(0, 0);
+	}
+
+	.location-title {
+		font-size: 15px;
+	}
+
+	.donut-img {
+		margin-top: 453px;
+		margin-left: 20%;
+	}
+
+		/*Map*/
+	.marker-info-window-div {
+		max-width: 270px;
+	}
+
+	/*Footer*/
+
+	.footer-button {
+		width: 12%;
+		height: 45px;
+		padding: 10px;
+	}
+
+	.footer-button-text {
+		margin-top: 0;
+	}
+}
+
+/*LAPTOP ===========================================================================================*/
+
+@media screen and (min-width: 1025px) and (orientation: landscape){
+
+	/*Content*/
+
+	/*Welcome*/
+
+	.welcome-content-div {
+		width: 70%;
+	}
+
+
+	.welcome-div-img {
+		max-width: 257px;
+		max-height: 600px;
+		width: 400px;
+	}
+		/*Search*/
+	.filter-search-main-div {
+		width: 26%;
+		height: 80%;
+		margin-left: 2%;
+		margin-top: 85px;
+		-webkit-transform: translate(0, 0);
+		transform: translate(0, 0);
+	}
+
+	.location-item {
+		height: 100px;
+	}
+
+	.donut-img {
+		margin-top: 460px;
+		margin-left: 20%;
+	}
+
+	.text-input-field {
+		font-size: 15px;
+		height: 25px;
+	}
+
+		/*Map*/
+	.marker-info-window-div {
+		max-width: 250px;
+	}
+
+	/*Footer*/
+	.footer-button {
+		width: 15%;
+		font-size: 13px;
+		padding: 10px;
+		height: 35px;
+	}
+
+	.footer-button-text {
+		font-size: 15px;
+	}
+
+}
+
+/*HD AND LARGE LAPTOP ===========================================================================================*/
+
+@media screen and (min-width: 1200px) and (orientation: landscape) {
+
+	/*CONTENT*/
+
+		/*Search*/
+	.donut-img {
+		height: 130px;
+		margin-top:	550px;
+	}
+
+	.location-address {
+		font-size: 17px;
+	}
+
+	.location-title {
+		font-size: 19px;
+	}
+
+	.burger-icon-div {
+		width: 10%;
+	}
+
+	/*FOOTER*/
+	.footer-button {
+		width: 8%;
+	}
+
+	.powered-by {
+		font-size: 14px;
+	}
+}
+
+/* COPYRIGHT
+ * (1) http://www.codeproject.com/Tips/674478/Customize-Scrollbars-using-CSS
+ * (2) https://css-tricks.com/almanac/properties/u/user-select/
+ */
+
